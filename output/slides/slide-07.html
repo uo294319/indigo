@@ -65,10 +65,12 @@ h2.t{font-family:'Inter',sans-serif;font-weight:900;font-size:34px;line-height:1
 .tlh{font-family:'Inter',sans-serif;font-weight:600;font-size:13px;margin-bottom:3px}
 .tx{font-family:'Inter',sans-serif;font-size:11px;color:var(--sl);line-height:1.4}
 /* ── Compare table ── */
-.cr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.06);padding:9px 0;align-items:center}
+.tg{display:grid;grid-template-columns:1.2fr 1fr 1fr;width:100%}
+.tg > span{display:flex;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.th{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--sl);border-bottom-color:rgba(255,255,255,.12)!important;padding-bottom:8px!important;margin-bottom:8px}
 .cc{font-family:'Inter',sans-serif;font-size:12px;color:var(--sl)}
-.co{font-family:'Inter',sans-serif;font-size:12px;color:#EF4444;text-align:center}
-.cn{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ac);text-align:center}
+.co{font-family:'Inter',sans-serif;font-size:12px;color:#EF4444;justify-content:center;text-align:center}
+.cn{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ac);justify-content:center;text-align:center}
 /* ── Budget ── */
 .bi{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .bl3{font-family:'Inter',sans-serif;font-size:12px;color:var(--sl);width:155px;flex-shrink:0}
@@ -104,18 +106,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#111;display:flex;al
 
 <div class="lbl">> DIFERENCIADORES_06 // POR QUÉ GANAMOS</div>
 <h2 class="t" style="color:white">IndiGo supera a cualquier alternativa en <span class="ac">7 ejes decisivos</span></h2>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;width:100%;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.12)">
-  <span style="font-family:'Share Tech Mono';font-size:10px;color:#94A3B8">CAPACIDAD</span>
-  <span style="font-family:'Share Tech Mono';font-size:10px;color:#EF4444;text-align:center">✕ FOR&amp;FROM</span>
-  <span style="font-family:'Share Tech Mono';font-size:10px;color:#00D2A0;text-align:center">✓ INDIGO</span>
+<div class="tg">
+  <span class="th">CAPACIDAD</span>
+  <span class="th co" style="color:#EF4444">✕ FOR&amp;FROM</span>
+  <span class="th cn" style="color:#00D2A0">✓ INDIGO</span>
+
+  <span class="cc">Alcance geográfico</span><span class="co">17 puntos físicos</span><span class="cn">Nacional 100% online</span>
+  <span class="cc">Canal C2B</span><span class="co">No disponible</span><span class="cn">App C2B nativa</span>
+  <span class="cc">Escalabilidad</span><span class="co">Limitada físicamente</span><span class="cn">350.000 tx/día cloud</span>
+  <span class="cc">Cumplimiento ESPR/DPP</span><span class="co">Sin soporte digital</span><span class="cn">Nativo desde día 1</span>
+  <span class="cc">Tasación de prendas</span><span class="co">Manual y variable</span><span class="cn">IA algorítmica &lt;3 seg</span>
+  <span class="cc">Fidelización usuario</span><span class="co">No existe</span><span class="cn">Puntos + Marketplace</span>
+  <span class="cc" style="border-bottom:none">Modo offline</span><span class="co" style="border-bottom:none">No aplica</span><span class="cn" style="border-bottom:none">SQLite AES-256 sync</span>
 </div>
-<div class="cr"><span class="cc">Alcance geográfico</span><span class="co">17 puntos físicos</span><span class="cn">Nacional 100% online</span></div>
-<div class="cr"><span class="cc">Canal C2B</span><span class="co">No disponible</span><span class="cn">App C2B nativa</span></div>
-<div class="cr"><span class="cc">Escalabilidad</span><span class="co">Limitada físicamente</span><span class="cn">350.000 tx/día cloud</span></div>
-<div class="cr"><span class="cc">Cumplimiento ESPR/DPP</span><span class="co">Sin soporte digital</span><span class="cn">Nativo desde día 1</span></div>
-<div class="cr"><span class="cc">Tasación de prendas</span><span class="co">Manual y variable</span><span class="cn">IA algorítmica &lt;3 seg</span></div>
-<div class="cr"><span class="cc">Fidelización usuario</span><span class="co">No existe</span><span class="cn">Puntos + Marketplace</span></div>
-<div class="cr" style="border-bottom:none"><span class="cc">Modo offline</span><span class="co">No aplica</span><span class="cn">SQLite AES-256 sync</span></div>
 
 <div class="logoc"><svg width="18" height="18" viewBox="0 0 100 100" fill="none"><path d="M20 20H80V80H20V20Z" stroke="white" stroke-width="6"/><rect x="28" y="28" width="12" height="12" fill="white"/><rect x="44" y="28" width="12" height="12" fill="white"/><rect x="28" y="44" width="12" height="12" fill="white"/><rect x="60" y="60" width="12" height="12" fill="#00D2A0"/></svg><span style="color:white">PROYECTO<span style="color:#00D2A0">.</span>02</span></div>
 <div class="sno"><span class="c" style="color:#00D2A0">07</span> / 12</div>
