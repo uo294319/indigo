@@ -6,8 +6,8 @@ import { ExportButton } from './components/ExportButton'
 import { NavArrows } from './components/NavArrows'
 import { Slide01_Presentation } from './slides/Slide01_Presentation'
 import { Slide02_Problem } from './slides/Slide02_Problem'
-import { Slide03_Marketplace } from './slides/Slide03_Marketplace'
-import { Slide04_Gamification } from './slides/Slide04_Gamification'
+import { Slide03_Solution } from './slides/Slide03_Solution'
+import { Slide04_Marketplace } from './slides/Slide04_Marketplace'
 import { Slide05_Capacity } from './slides/Slide05_Capacity'
 import { Slide06_Logistics } from './slides/Slide06_Logistics'
 import { Slide07_Backbone } from './slides/Slide07_Backbone'
@@ -16,12 +16,13 @@ import { Slide09_Budget } from './slides/Slide09_Budget'
 import { Slide10_Management } from './slides/Slide10_Management'
 import { Slide11_Planning } from './slides/Slide11_Planning'
 import { Slide12_Summary } from './slides/Slide12_Summary'
+import { Demo } from './slides/Demo'
 
 const slides = [
   Slide01_Presentation,
   Slide02_Problem,
-  Slide03_Marketplace,
-  Slide04_Gamification,
+  Slide03_Solution,
+  Slide04_Marketplace,
   Slide05_Capacity,
   Slide06_Logistics,
   Slide07_Backbone,
@@ -30,6 +31,7 @@ const slides = [
   Slide10_Management,
   Slide11_Planning,
   Slide12_Summary,
+  Demo,
 ]
 
 function App() {

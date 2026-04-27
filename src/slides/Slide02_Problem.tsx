@@ -7,44 +7,68 @@ export function Slide02_Problem() {
     <SlideContainer background="black" slideNumber={2}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         
-        {/* Titular accionable */}
         <Headline dark>
           Inditex no puede esperar — la regulación obliga, el mercado tira y la oportunidad expira.
         </Headline>
 
-        <div style={{ display: 'flex', gap: '80px', alignItems: 'center', marginTop: '20px' }}>
+        {/* Gap aumentado a 140px para dar aire a la flecha derecha */}
+        <div style={{ display: 'flex', gap: '140px', alignItems: 'center', marginTop: '20px' }}>
           
-          {/* Columna Izquierda: Flujo vertical solicitado */}
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            gap: '12px',
-            minWidth: '280px'
-          }}>
-            <FlowStep label="Inditex" />
-            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
-            <FlowStep label="Usuarios" />
-            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
-            <FlowStep label="IndiGo" accent />
-            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
-            <FlowStep label="Puntos de venta" />
+          {/* Contenedor relativo para la columna de flujo */}
+          <div style={{ position: 'relative', minWidth: '280px' }}>
+            
+            {/* SVG de Circularidad Ajustado a la DERECHA */}
+            <svg 
+              width="80" 
+              height="255" 
+              viewBox="0 0 80 255" 
+              style={{ 
+                position: 'absolute', 
+                right: '-80px', // Posicionado a la derecha del cuadro
+                top: '165px', 
+                pointerEvents: 'none' 
+              }}
+            >
+              {/* Curva invertida: Empieza en 0 (izquierda del SVG) va hacia 70 (derecha) y vuelve a 0 */}
+              <path 
+                d="M 0 235 C 70 235, 70 20, 0 20" 
+                stroke="#00D2A0" 
+                strokeWidth="2" 
+                fill="none" 
+              />
+              {/* Punta de la flecha apuntando a la izquierda (hacia Usuarios) */}
+              <path 
+                d="M 8 12 L 0 20 L 8 28" 
+                stroke="#00D2A0" 
+                strokeWidth="2" 
+                fill="none" 
+              />
+            </svg>
+
+            {/* Columna de Flujo */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              gap: '12px'
+            }}>
+              <FlowStep label="Inditex" />
+              <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+              <FlowStep label="Usuarios" />
+              <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+              <FlowStep label="IndiGo" accent />
+              <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+              <FlowStep label="Puntos de venta" />
+            </div>
           </div>
 
-          {/* Columna Derecha: Titulares Estratégicos */}
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '75px',
-            flex: 1 
-          }}>
-            {/* 1. Dinero */}
+          {/* Columna Derecha: Contenido Estratégico */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '75px', flex: 1 }}>
             <BigNumber 
               value=">5.500 M€/año" 
               label="Mercado segunda mano España (10% retail 2025)"
             />
 
-            {/* 2. Sostenibilidad: Titular basado en objetivos 2040 */}
             <div>
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', color: '#00D2A0', marginBottom: '8px' }}>{'>'} OBJETIVOS INDITEX</div>
               <div style={{ color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '1.8rem', fontWeight: 700 }}>
@@ -55,7 +79,6 @@ export function Slide02_Problem() {
               </p>
             </div>
 
-            {/* 3. Regulatorio: Titular basado en ESPR/DPP Julio 2026 */}
             <div>
               <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', color: '#00D2A0', marginBottom: '8px' }}>{'>'} COMPLIANCE</div>
               <div style={{ color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '1.8rem', fontWeight: 700 }}>
