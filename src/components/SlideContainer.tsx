@@ -10,10 +10,6 @@ interface SlideContainerProps {
   demoUrl?: string
 }
 
-const techGrid = [
-  'linear-gradient(0deg, transparent 24%, rgba(0,210,160,.06) 25%, rgba(0,210,160,.06) 26%, transparent 27%, transparent 74%, rgba(0,210,160,.06) 75%, rgba(0,210,160,.06) 76%, transparent 77%, transparent)',
-  'linear-gradient(90deg, transparent 24%, rgba(0,210,160,.06) 25%, rgba(0,210,160,.06) 26%, transparent 27%, transparent 74%, rgba(0,210,160,.06) 75%, rgba(0,210,160,.06) 76%, transparent 77%, transparent)',
-].join(', ')
 
 const bgConfig: Record<BgVariant, {
   bg: string

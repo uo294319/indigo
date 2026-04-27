@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function SucculentPlantCard() {
   return (
     <div className="grid gap-0 grid-cols-1 md:grid-cols-2 w-full text-left rounded-2xl border border-gray-200 overflow-hidden bg-white shadow-sm">
