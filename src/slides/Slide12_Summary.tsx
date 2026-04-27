@@ -1,16 +1,16 @@
 import { SlideContainer } from '../components/SlideContainer'
 
 const reasons = [
-  { n: '01', title: 'Mercado caliente',       desc: '244.000 M€ globales · canal C2B propio para 218 M apps' },
+  { n: '01', title: 'Mercado caliente', desc: '244.000 M€ globales · canal C2B propio para 218 M apps' },
   { n: '02', title: 'Cumplimiento regulatorio', desc: 'ESPR + DPP + CSRD desde el día uno — sin deuda técnica' },
-  { n: '03', title: 'Operativa probada',       desc: '6,5k prendas/día · 350k transacciones en pico' },
-  { n: '04', title: 'Inversión cerrada',       desc: '4,44 M€ IVA incluido · 22 meses · 3 centros' },
-  { n: '05', title: 'Riesgo controlado',       desc: '22 riesgos analizados, solo 1 en nivel Medio (mitigado)' },
+  { n: '03', title: 'Operativa probada', desc: '6,5k prendas/día · 350k transacciones en pico' },
+  { n: '04', title: 'Inversión cerrada', desc: '4,44 M€ IVA incluido · 22 meses · 3 centros' },
+  { n: '05', title: 'Riesgo controlado', desc: '22 riesgos analizados, solo 1 en nivel Medio (mitigado)' },
 ]
 
 export function Slide12_Summary() {
   return (
-    <SlideContainer background="black" slideNumber={12}>
+    <SlideContainer background="black" slideNumber={12} demoUrl="https://indigo-web-demo.vercel.app/">
       <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
 
         {/* Headline */}

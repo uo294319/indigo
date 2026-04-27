@@ -7,6 +7,7 @@ interface SlideContainerProps {
   background: BgVariant
   slideNumber: number
   total?: number
+  demoUrl?: string
 }
 
 const techGrid = [
@@ -24,7 +25,7 @@ const bgConfig: Record<BgVariant, {
   canvas:  { bg: '#FFFFFF', logoVariant: 'horizontal' },
 }
 
-export function SlideContainer({ children, background, slideNumber, total = 12 }: SlideContainerProps) {
+export function SlideContainer({ children, background, slideNumber, total = 12, demoUrl }: SlideContainerProps) {
   const { bg, logoVariant, grid } = bgConfig[background]
   const accentColor = '#00D2A0'
   const metaColor   = '#94A3B8'
@@ -63,16 +64,41 @@ export function SlideContainer({ children, background, slideNumber, total = 12 }
         }}
       >
         <Logo variant={logoVariant} width={116} />
-        <span
-          className="progress"
-          style={{
-            fontFamily: "'Share Tech Mono', monospace",
-            fontSize: '0.72rem',
-            color: metaColor,
-          }}
-        >
-          <span style={{ color: accentColor }}>{String(slideNumber).padStart(2, '0')}</span>{' '}/ {String(total).padStart(2, '0')}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'Share Tech Mono', monospace",
+                fontSize: '0.72rem',
+                color: accentColor,
+                textDecoration: 'none',
+                border: `1px solid ${accentColor}`,
+                padding: '2px 8px',
+                borderRadius: 2,
+                letterSpacing: '0.05em',
+                opacity: 0.85,
+                transition: 'opacity 0.15s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+              onMouseLeave={e => (e.currentTarget.style.opacity = '0.85')}
+            >
+              DEMO
+            </a>
+          )}
+          <span
+            className="progress"
+            style={{
+              fontFamily: "'Share Tech Mono', monospace",
+              fontSize: '0.72rem',
+              color: metaColor,
+            }}
+          >
+            <span style={{ color: accentColor }}>{String(slideNumber).padStart(2, '0')}</span>{' '}/ {String(total).padStart(2, '0')}
+          </span>
+        </div>
       </div>
     </div>
   )
