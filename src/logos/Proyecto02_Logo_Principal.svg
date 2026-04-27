@@ -1,0 +1,27 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+            .text-brand { font-family: 'Share Tech Mono', monospace; fill: #111827; }
+            .text-accent { font-family: 'Share Tech Mono', monospace; fill: #00D2A0; }
+        </style>
+    </defs>
+    
+    <g transform="translate(50, 0)">
+        <path d="M20 20H80V80H20V20Z" stroke="#111827" stroke-width="4"/>
+        <rect x="28" y="28" width="12" height="12" fill="#111827"/>
+        <rect x="44" y="28" width="12" height="12" fill="#111827"/>
+        <rect x="28" y="44" width="12" height="12" fill="#111827"/>
+        <rect x="60" y="60" width="12" height="12" fill="#00D2A0"/>
+    </g>
+
+    <text x="100" y="150" font-size="70" text-anchor="middle" class="text-brand" letter-spacing="-4">
+        P<tspan letter-spacing="-8">Y</tspan><tspan fill="#00D2A0" letter-spacing="-2">.</tspan>2
+    </text>
+
+    <line x1="40" y1="170" x2="160" y2="170" stroke="#111827" stroke-width="1"/>
+
+    <text x="100" y="195" font-size="16" text-anchor="middle" class="text-brand" letter-spacing="3">
+        PROYECTO.02
+    </text>
+</svg>

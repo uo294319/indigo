@@ -1,0 +1,20 @@
+<svg width="300" height="60" viewBox="0 0 300 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+            .text-white { font-family: 'Share Tech Mono', monospace; fill: #FFFFFF; font-weight: bold; }
+        </style>
+    </defs>
+
+    <g transform="scale(0.6)">
+        <path d="M20 20H80V80H20V20Z" stroke="#FFFFFF" stroke-width="6"/>
+        <rect x="28" y="28" width="12" height="12" fill="#FFFFFF"/>
+        <rect x="44" y="28" width="12" height="12" fill="#FFFFFF"/>
+        <rect x="28" y="44" width="12" height="12" fill="#FFFFFF"/>
+        <rect x="60" y="60" width="12" height="12" fill="#00D2A0"/>
+    </g>
+
+    <text x="70" y="40" font-size="32" class="text-white" letter-spacing="-1">
+        PROYECTO<tspan fill="#00D2A0">.</tspan>02
+    </text>
+</svg>
