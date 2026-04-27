@@ -24,7 +24,7 @@ export function Slide01_Presentation() {
         {/* Título principal */}
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#00D2A0', letterSpacing: '0.18em', marginBottom: 24 }}>
-            {'>'} CLIENT: INDITEX, S.A. &nbsp;·&nbsp; REF: PY2-INDIGO-v2.0 &nbsp;·&nbsp; ABRIL 2026
+            CLIENT: INDITEX, S.A. &nbsp;/&nbsp; REF: PY2-INDIGO-v2.0 &nbsp;/&nbsp; ABRIL 2026
           </div>
           <h1 style={{
             fontFamily: "'Share Tech Mono', monospace",
@@ -54,7 +54,7 @@ export function Slide01_Presentation() {
             margin: '0 auto',
             lineHeight: 1.6,
           }}>
-            Convertimos cada prenda usada de Inditex en una segunda venta — sin fricción, en circuito cerrado.
+            Convertimos cada prenda usada de Inditex en una segunda venta.
           </div>
         </div>
 

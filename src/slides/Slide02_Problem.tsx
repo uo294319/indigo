@@ -1,73 +1,94 @@
 import { SlideContainer } from '../components/SlideContainer'
 import { Headline } from '../components/Headline'
 import { BigNumber } from '../components/BigNumber'
-import { Chip } from '../components/Chip'
-import { AccentLine } from '../components/AccentLine'
 
 export function Slide02_Problem() {
   return (
     <SlideContainer background="black" slideNumber={2}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         
         {/* Titular accionable */}
         <Headline dark>
           Inditex no puede esperar — la regulación obliga, el mercado tira y la oportunidad expira.
         </Headline>
 
-        {/* Tres números protagonistas */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px' }}>
-          <BigNumber 
-            value="244.000 M€" 
-            label="Mercado segunda mano global (Est. 2025)"
-          />
-          <BigNumber 
-            value=">5.500 M€/año" 
-            label="Mercado segunda mano España (10% retail 2025)"
-          />
-          <BigNumber 
-            value="218 M" 
-            label="Apps Inditex activas (Base explotable día 1)"
-          />
-        </div>
+        <div style={{ display: 'flex', gap: '80px', alignItems: 'center', marginTop: '20px' }}>
+          
+          {/* Columna Izquierda: Flujo vertical solicitado */}
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            gap: '12px',
+            minWidth: '280px'
+          }}>
+            <FlowStep label="Inditex" />
+            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+            <FlowStep label="Usuarios" />
+            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+            <FlowStep label="IndiGo" accent />
+            <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
+            <FlowStep label="Puntos de venta" />
+          </div>
 
-        <div style={{ display: 'flex', gap: '80px', marginTop: '20px' }}>
-          {/* Bullets de cuerpo */}
-          <AccentLine>
-            <ul style={{ 
-              listStyle: 'none', 
-              padding: 0, 
-              margin: 0, 
-              color: 'white', 
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <li>• For&From no escala: solo discapacidad e intermediación local</li>
-              <li>• Vinted captura valor con 10% de comisión fuera de Inditex</li>
-              <li>• Sin canal C2B propio, Inditex pierde la prenda y al cliente</li>
-            </ul>
-          </AccentLine>
+          {/* Columna Derecha: Titulares Estratégicos */}
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '75px',
+            flex: 1 
+          }}>
+            {/* 1. Dinero */}
+            <BigNumber 
+              value=">5.500 M€/año" 
+              label="Mercado segunda mano España (10% retail 2025)"
+            />
 
-          {/* Marco normativo */}
-          <div style={{ flex: 1 }}>
-            <div style={{ 
-              fontFamily: "'Share Tech Mono', monospace", 
-              fontSize: '0.65rem', 
-              color: '#00D2A0', 
-              marginBottom: '16px' 
-            }}>
-              {'>'} MARCO_NORMATIVO_COMPLIANCE
+            {/* 2. Sostenibilidad: Titular basado en objetivos 2040 */}
+            <div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', color: '#00D2A0', marginBottom: '8px' }}>{'>'} OBJETIVOS INDITEX</div>
+              <div style={{ color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '1.8rem', fontWeight: 700 }}>
+                Cero Emisiones Netas (2040)
+              </div>
+              <p style={{ color: '#94A3B8', fontFamily: 'Inter, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
+                Memoria Anual Inditex 2024 - Plan de Transición Climática
+              </p>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['ESPR (UE 2024/1781)', 'DPP', 'RGPD', 'LOPD-GDD', 'NIS2', 'AI Act', 'CSRD', 'LGDCU', 'LSSI-CE', 'DSA', 'PCI DSS'].map(norm => (
-                <Chip key={norm} label={norm} />
-              ))}
+
+            {/* 3. Regulatorio: Titular basado en ESPR/DPP Julio 2026 */}
+            <div>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', color: '#00D2A0', marginBottom: '8px' }}>{'>'} COMPLIANCE</div>
+              <div style={{ color: 'white', fontFamily: 'Inter, sans-serif', fontSize: '1.8rem', fontWeight: 700 }}>
+                Regulación ESPR (Julio 2026)
+              </div>
+              <p style={{ color: '#94A3B8', fontFamily: 'Inter, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
+                Reglamento (UE) 2024/1781 sobre Ecodiseño para Productos Sostenibles
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </SlideContainer>
+  )
+}
+
+function FlowStep({ label, accent = false }: { label: string, accent?: boolean }) {
+  return (
+    <div style={{
+      width: '100%',
+      padding: '20px',
+      border: `1px solid ${accent ? '#00D2A0' : '#1E2939'}`,
+      backgroundColor: accent ? 'rgba(0, 210, 160, 0.05)' : 'transparent',
+      borderRadius: '4px',
+      textAlign: 'center',
+      fontFamily: "'Share Tech Mono', monospace",
+      color: accent ? '#00D2A0' : 'white',
+      fontSize: '1.2rem',
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em'
+    }}>
+      {label}
+    </div>
   )
 }

@@ -49,34 +49,10 @@ export function Slide12_Summary() {
 
         {/* CTAs + Cierre */}
         <div>
-          <div style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
-            <button style={{
-              background: '#111827', color: 'white',
-              fontFamily: "'Share Tech Mono', monospace", fontSize: '0.82rem',
-              padding: '13px 28px', border: 'none',
-              borderBottom: '2px solid #00D2A0',
-              cursor: 'pointer', letterSpacing: '0.05em',
-            }}>
-              {'> APROBAR_KICKOFF'}
-            </button>
-            <button style={{
-              background: '#00D2A0', color: '#111827',
-              fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: '0.82rem',
-              padding: '13px 28px', border: 'none',
-              boxShadow: '4px 4px 0 0 rgba(255,255,255,0.12)',
-              cursor: 'pointer',
-            }}>
-              Solicitar dossier ampliado
-            </button>
-          </div>
-
           <div style={{ borderTop: '1px solid #1E2939', paddingTop: 14 }}>
             <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#94A3B8', margin: '0 0 4px 0' }}>
               <span style={{ color: 'white' }}>Yago Rueda · Ángel Arróspide</span> — Dirección de Proyecto &nbsp;·&nbsp;
               <span style={{ color: 'white' }}>Marcos Rato</span> — Subdirección Técnica
-            </p>
-            <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#00D2A0', margin: 0 }}>
-              {'>'} CONTACTO: PY.2 · PROYECTO.02
             </p>
           </div>
         </div>
