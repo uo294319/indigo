@@ -8,7 +8,7 @@ import { Headline } from '../components/Headline'
 
 export function Demo() {
   return (
-    <SlideContainer background="surface" slideNumber={00}>
+    <SlideContainer background="surface" slideNumber={0}>
       <Headline>
         Demo en Vivo
       </Headline>
