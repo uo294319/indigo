@@ -16,7 +16,7 @@ export function Slide05_Capacity() {
       </Headline>
 
       {/* KPI cards */}
-      <div style={{ display: 'flex', gap: 16, marginBottom: 32 }}>
+      <div style={{ display: 'flex', gap: 16, marginBottom: 40 }}>
         <KpiCard dark label="Prendas/centro/día (año 1)" value="6.500" />
         <KpiCard dark label="Multiplicador en picos" value="×3–×5" />
         <KpiCard dark label="Transacciones/día estable" value="50k–70k" />
@@ -39,9 +39,9 @@ export function Slide05_Capacity() {
             <tbody>
               {projRows.map(([ind, y1, y3]) => (
                 <tr key={ind}>
-                  <td style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: '#94A3B8', padding: '10px 16px', borderBottom: '1px solid #1E2939' }}>{ind}</td>
-                  <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.95rem', color: '#00D2A0', padding: '10px 16px', borderBottom: '1px solid #1E2939' }}>{y1}</td>
-                  <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.95rem', color: '#00D2A0', padding: '10px 16px', borderBottom: '1px solid #1E2939' }}>{y3}</td>
+                  <td style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: '#94A3B8', padding: '12px 16px', borderBottom: '1px solid #1E2939' }}>{ind}</td>
+                  <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.95rem', color: '#00D2A0', padding: '12px 16px', borderBottom: '1px solid #1E2939' }}>{y1}</td>
+                  <td style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.95rem', color: '#00D2A0', padding: '12px 16px', borderBottom: '1px solid #1E2939' }}>{y3}</td>
                 </tr>
               ))}
             </tbody>
@@ -53,10 +53,10 @@ export function Slide05_Capacity() {
           <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0', marginBottom: 16 }}>{'>'} CRECIMIENTO GMV (M€)</div>
           {[
             { label: 'Año 1', value: 45,  max: 264, color: '#334155' },
-            { label: 'Año 2', value: 130, max: 264, color: '#00A07A' },
+            { label: 'Año 2', value: 138, max: 264, color: '#00A07A' }, // Valor corregido a 138 de acorde al mock original
             { label: 'Año 3', value: 264, max: 264, color: '#00D2A0' },
           ].map(({ label, value, max, color }) => (
-            <div key={label} style={{ marginBottom: 14 }}>
+            <div key={label} style={{ marginBottom: 18 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
                 <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.7rem', color: '#94A3B8' }}>{label}</span>
                 <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.8rem', color }}>
@@ -69,13 +69,6 @@ export function Slide05_Capacity() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Quote */}
-      <div style={{ borderLeft: '3px solid #00D2A0', paddingLeft: 16, marginTop: 16 }}>
-        <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.75rem', color: '#94A3B8', margin: 0, fontStyle: 'italic' }}>
-          "Estos números son la clave de las decisiones técnicas que explica a continuación <span style={{ color: 'white' }}>Marcos</span>."
-        </p>
       </div>
     </SlideContainer>
   )

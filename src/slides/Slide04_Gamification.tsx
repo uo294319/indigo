@@ -8,10 +8,10 @@ const levels = [
   { name: 'Platino', benefit: 'Eventos cerrados + multiplicadores',  active: true  },
 ]
 
-// Pentagon circular diagram: 5 nodes
-const CYCLE_NODES = ['Venta', 'Puntos', 'Cupones', 'Compra', 'Re-Venta']
+// Ciclo cerrado de 4 nodos
+const CYCLE_NODES = ['Ventas', 'Puntos disp.', 'Cupones', 'Prendas']
 const CX = 150, CY = 150, R = 106
-const angles = CYCLE_NODES.map((_, i) => -Math.PI / 2 + (2 * Math.PI / 5) * i)
+const angles = CYCLE_NODES.map((_, i) => -Math.PI / 2 + (2 * Math.PI / 4) * i)
 const pts = angles.map(a => ({ x: CX + R * Math.cos(a), y: CY + R * Math.sin(a) }))
 
 export function Slide04_Gamification() {
@@ -23,7 +23,7 @@ export function Slide04_Gamification() {
 
       <div style={{ display: 'flex', gap: 48, flex: 1, minHeight: 0 }}>
 
-        {/* Left: Circular diagram + niveles */}
+        {/* Izquierda: Rueda */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0' }}>{'>'} LA RUEDA</div>
 
@@ -34,17 +34,14 @@ export function Slide04_Gamification() {
               </marker>
             </defs>
 
-            {/* Outer circle track */}
             <circle cx={CX} cy={CY} r={R + 28} stroke="#1E2939" strokeWidth={1} fill="none" strokeDasharray="3 4"/>
 
-            {/* Connecting arrows between nodes */}
             {pts.map((p, i) => {
               const next = pts[(i + 1) % pts.length]
-              // Shorten arrow so it doesn't overlap node circles
               const dx = next.x - p.x, dy = next.y - p.y
               const len = Math.sqrt(dx * dx + dy * dy)
               const nx = dx / len, ny = dy / len
-              const shrink = 26
+              const shrink = 30
               return (
                 <line
                   key={i}
@@ -56,30 +53,48 @@ export function Slide04_Gamification() {
               )
             })}
 
-            {/* Node circles */}
             {pts.map((p, i) => (
               <g key={CYCLE_NODES[i]}>
-                <circle cx={p.x} cy={p.y} r={24} fill="#1E2939" stroke="#334155" strokeWidth={1}/>
-                {i === 0 && <circle cx={p.x} cy={p.y} r={24} fill="none" stroke="#00D2A0" strokeWidth={1.5}/>}
-                <text x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
+                <circle cx={p.x} cy={p.y} r={28} fill="#1E2939" stroke="#334155" strokeWidth={1}/>
+                {i === 0 && <circle cx={p.x} cy={p.y} r={28} fill="none" stroke="#00D2A0" strokeWidth={1.5}/>}
+                
+                <text x={p.x} y={p.y - (i === 1 ? 5 : 0)} textAnchor="middle" dominantBaseline="middle"
                   fill={i === 0 ? '#00D2A0' : '#94A3B8'}
                   fontFamily="'Share Tech Mono', monospace" fontSize={9} fontWeight="bold">
                   {CYCLE_NODES[i]}
                 </text>
+                {/* Añadir subtítulo de caducidad al nodo 2 */}
+                {i === 1 && (
+                  <text x={p.x} y={p.y + 7} textAnchor="middle" dominantBaseline="middle" fill="#94A3B8" fontFamily="'Share Tech Mono', monospace" fontSize={7} fontWeight="bold">
+                    (6 meses)
+                  </text>
+                )}
               </g>
             ))}
 
-            {/* Center label */}
             <circle cx={CX} cy={CY} r={36} fill="rgba(0,210,160,0.06)" stroke="rgba(0,210,160,0.2)" strokeWidth={1}/>
-            <text x={CX} y={CY - 7} textAnchor="middle" dominantBaseline="middle"
-              fill="#00D2A0" fontFamily="'Share Tech Mono', monospace" fontSize={9}>LA</text>
-            <text x={CX} y={CY + 7} textAnchor="middle" dominantBaseline="middle"
-              fill="#00D2A0" fontFamily="'Share Tech Mono', monospace" fontSize={9}>RUEDA</text>
+            <text x={CX} y={CY - 7} textAnchor="middle" dominantBaseline="middle" fill="#00D2A0" fontFamily="'Share Tech Mono', monospace" fontSize={9}>LA</text>
+            <text x={CX} y={CY + 7} textAnchor="middle" dominantBaseline="middle" fill="#00D2A0" fontFamily="'Share Tech Mono', monospace" fontSize={9}>RUEDA</text>
           </svg>
+        </div>
 
-          {/* Niveles */}
+        {/* Derecha: Fidelización y Saldo */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          
           <div>
-            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0', marginBottom: 10 }}>{'>'} NIVELES DE FIDELIZACIÓN</div>
+            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0', marginBottom: 10 }}>{'>'} NIVELES DE FIDELIZACIÓN Y SALDO HISTÓRICO</div>
+            
+            <div style={{
+              padding: '12px 14px',
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid #1E2939',
+              borderRadius: 2,
+              marginBottom: 12
+            }}>
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.85rem', color: 'white', marginBottom: 4 }}>Saldo histórico</div>
+              <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.75rem', color: '#94A3B8' }}>Permanente. Valor reputacional (litros acumulados).</div>
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {levels.map(l => (
                 <div key={l.name} style={{
@@ -95,42 +110,21 @@ export function Slide04_Gamification() {
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Right: saldo dual + bullets */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0', marginBottom: 4 }}>{'>'} SALDO DUAL (mitiga R-011 / R-013)</div>
-          {[
-            { title: 'Saldo histórico',   desc: 'Permanente. Valor reputacional (litros acumulados).', accent: false },
-            { title: 'Saldo disponible',  desc: 'Caduca a 6 meses. Controla el pasivo de tesorería.',  accent: true  },
-          ].map(({ title, desc, accent }) => (
-            <div key={title} style={{
-              padding: '20px 22px',
+          <div style={{ marginTop: 12 }}>
+            <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.6rem', color: '#00D2A0', marginBottom: 6 }}>{'>'} GESTIÓN DE PASIVO (mitiga R-011 / R-013)</div>
+            <div style={{
+              padding: '16px',
               background: 'rgba(255,255,255,0.03)',
-              border: `1px solid ${accent ? 'rgba(0,210,160,0.3)' : '#1E2939'}`,
+              border: `1px solid rgba(0,210,160,0.3)`,
               borderRadius: 2,
             }}>
-              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.85rem', color: accent ? '#00D2A0' : 'white', marginBottom: 8 }}>{title}</div>
-              <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.5 }}>{desc}</div>
-              {accent && (
-                <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#334155', marginTop: 10 }}>
-                  Aviso automático 7 días antes de caducidad
-                </div>
-              )}
+              <div style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.85rem', color: '#00D2A0', marginBottom: 6 }}>Saldo disponible (Puntos)</div>
+              <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.5 }}>
+                Caduca a 6 meses. Controla el pasivo de tesorería.<br/>
+                <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: '0.65rem', color: '#334155', display: 'block', marginTop: 8 }}>Aviso automático 7 días antes de caducidad</span>
+              </div>
             </div>
-          ))}
-
-          <div style={{ marginTop: 8 }}>
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {[
-                'Tasación con bonificación por nivel — fideliza al usuario activo',
-                'Alineado con CSRD: cada acción es reporte de sostenibilidad auditable',
-              ].map((b, i) => (
-                <li key={i} style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', color: '#94A3B8', display: 'flex', gap: 10 }}>
-                  <span style={{ color: '#00D2A0', flexShrink: 0 }}>—</span><span>{b}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
