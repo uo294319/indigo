@@ -46,23 +46,57 @@ function App() {
   }
 
   return (
-    <div className="app-shell" style={{ width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative' }}>
+    <div 
+      className="app-shell" 
+      style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        overflow: 'hidden', 
+        position: 'relative',
+        background: '#1a1a1a', // Fondo oscuro para contrastar con la "hoja"
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
       <ExportButton />
 
-      {/* Screen view: only active slide */}
-      <div className="slide-wrapper" onClick={handleClick} style={{ cursor: 'pointer' }}>
-        {slides.map((SlideComp, i) => (
-          <div
-            key={i}
-            style={{ display: i === current ? 'block' : 'none' }}
-            className="slide-active-only"
-          >
-            <SlideComp />
-          </div>
-        ))}
+      {/* Contenedor de previsualización: imita el A4 landscape de print.css */}
+      <div 
+        className="slide-preview-container"
+        onClick={handleClick}
+        style={{ 
+          cursor: 'pointer',
+          boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.5)',
+          // Estas dimensiones igualan a las de .slide en print.css
+          width: '297mm',
+          height: '210mm',
+          // Asegura que quepa en pantallas pequeñas escalando el contenido
+          maxWidth: '95vw',
+          maxHeight: '95vh',
+          display: 'flex',
+          overflow: 'hidden',
+          backgroundColor: '#fff' 
+        }}
+      >
+        <div style={{ transform: 'scale(var(--preview-scale, 1))', transformOrigin: 'top left', width: '297mm', height: '210mm' }}>
+          {slides.map((SlideComp, i) => (
+            <div
+              key={i}
+              style={{ 
+                display: i === current ? 'block' : 'none',
+                width: '100%',
+                height: '100%'
+              }}
+              className="slide-active-only"
+            >
+              <SlideComp />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Print view: all slides rendered (hidden on screen via print.css) */}
+      {/* Vista de impresión (oculta en pantalla) */}
       <div className="print-all" style={{ display: 'none' }}>
         {slides.map((SlideComp, i) => (
           <SlideComp key={i} />

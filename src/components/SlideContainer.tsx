@@ -19,9 +19,9 @@ const bgConfig: Record<BgVariant, {
   logoVariant: 'dark' | 'horizontal'
   grid?: string
 }> = {
-  black:   { bg: '#111827', logoVariant: 'dark',       grid: techGrid },
-  surface: { bg: '#F8FAFC', logoVariant: 'horizontal'                 },
-  canvas:  { bg: '#FFFFFF', logoVariant: 'horizontal'                 },
+  black:   { bg: '#111827', logoVariant: 'dark' },
+  surface: { bg: '#F8FAFC', logoVariant: 'horizontal' },
+  canvas:  { bg: '#FFFFFF', logoVariant: 'horizontal' },
 }
 
 export function SlideContainer({ children, background, slideNumber, total = 12 }: SlideContainerProps) {
@@ -33,13 +33,14 @@ export function SlideContainer({ children, background, slideNumber, total = 12 }
     <div
       className="slide"
       style={{
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         background: bg,
+        // Al no existir 'grid', backgroundImage será undefined y el fondo será liso
         backgroundImage: grid,
         backgroundSize: grid ? '50px 50px' : undefined,
         position: 'relative',
-        padding: '52px 64px 68px',
+        padding: '36px 48px 48px', // Mantenemos el padding optimizado para PDF
         display: 'flex',
         flexDirection: 'column',
         boxSizing: 'border-box',
@@ -50,6 +51,7 @@ export function SlideContainer({ children, background, slideNumber, total = 12 }
 
       {/* Footer */}
       <div
+        className="progress-container"
         style={{
           position: 'absolute',
           bottom: 24,
