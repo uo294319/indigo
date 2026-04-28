@@ -58,7 +58,7 @@ export function Slide02_Problem() {
               <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
               <FlowStep label="IndiGo" accent />
               <div style={{ color: '#00D2A0', fontSize: '1.5rem' }}>↓</div>
-              <FlowStep label="Puntos de venta" />
+              <FlowStep label="For&From" />
             </div>
           </div>
 
