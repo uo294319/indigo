@@ -1,6 +1,6 @@
 @media print {
   @page { size: A4 landscape; margin: 0; }
-  .export-btn, .nav-arrows, .progress { display: none !important; }
+  .export-btn, .band-controls, .nav-arrows, .progress { display: none !important; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
   /* Desbloquear el scroll del contenedor raíz */

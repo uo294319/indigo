@@ -16,7 +16,7 @@ export function Demo() {
       {/* 💻 VISTA DE PANTALLA: Iframe interactivo (Se oculta al exportar a PDF) */}
       <div className="flex-1 w-full mt-5 mb-5 rounded-xl overflow-hidden border border-slate-200 bg-white shadow-md print:hidden">
         <iframe 
-          src="https://indigo-web-demo.vercel.app/#vender"
+          src="https://indigo-web-demo.vercel.app/"
           title="IndiGo Web Demo"
           className="w-full h-full border-none block"
         />
